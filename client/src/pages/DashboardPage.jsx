@@ -4,6 +4,7 @@ import { useAuth } from '../context/AuthContext';
 import BookingCard from '../components/BookingCard';
 import AISummaryModal from '../components/AISummaryModal';
 import './DashboardPage.css';
+import { Link } from 'react-router-dom';
 
 const DashboardPage = () => {
   const { user } = useAuth();
