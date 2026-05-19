@@ -86,7 +86,7 @@ const DashboardPage = () => {
         ) : filtered.length === 0 ? (
           <div className="empty-state card">
             <p className="empty-title">No {tab} bookings yet.</p>
-            {tab === 'upcoming' && <a href="/services" className="btn btn-primary" style={{marginTop:16}}>Browse Services</a>}
+            {tab === 'upcoming' && <Link to="/services" className="btn btn-primary" style={{marginTop:16}}>Browse Services</Link>}
           </div>
         ) : (
           <div className="bookings-list">
