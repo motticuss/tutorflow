@@ -42,7 +42,7 @@ input, textarea, select { font-family: var(--font-body); }
 img { max-width: 100%; display: block; }
 
 /* ── Utility classes ────────────────────────────────────── */
-.container { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+.container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
 
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
