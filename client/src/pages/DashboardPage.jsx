@@ -48,7 +48,7 @@ const DashboardPage = () => {
         <div className="dashboard-header">
           <div>
             <h1 className="page-title">My Dashboard</h1>
-            <p className="dashboard-welcome">Welcome back, {user?.name?.split(' ')[0]}! 👋</p>
+            <p className="dashboard-welcome">Welcome back, {user?.name?.split(' ')[0]}! </p>
           </div>
         </div>
 

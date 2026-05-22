@@ -62,7 +62,6 @@ cd tutorflow
 ```bash
 cd server
 npm install
-cp .env.example .env
 # Fill in your values in .env
 npm run dev
 ```
@@ -71,7 +70,6 @@ npm run dev
 ```bash
 cd client
 npm install
-cp .env.example .env
 # Set VITE_API_URL=http://localhost:5000
 npm run dev
 ```

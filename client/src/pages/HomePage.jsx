@@ -11,9 +11,9 @@ const SUBJECTS = [
 ];
 
 const FEATURES = [
-  { icon: '📅', title: 'Smart Booking', desc: 'Browse tutors, pick a time, and book in under a minute. No back-and-forth emails.' },
-  { icon: '🎓', title: 'Expert Tutors', desc: 'Qualified tutors across subjects and grade levels — from elementary to college.' },
-  { icon: '✨', title: 'AI Session Summaries', desc: 'After each session, get an AI-generated summary with key takeaways and what to study next.' },
+  {  title: 'Smart Booking', desc: 'Browse tutors, pick a time, and book in under a minute. No back-and-forth emails.' },
+  {  title: 'Expert Tutors', desc: 'Qualified tutors across subjects and grade levels — from elementary to college.' },
+  {  title: 'AI Session Summaries', desc: 'After each session, get an AI-generated summary with key takeaways and what to study next.' },
 ];
 
 const HomePage = () => (
