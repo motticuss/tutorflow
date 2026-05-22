@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import api from '../services/api';
 import './AuthPages.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 const SECURITY_QUESTIONS = [
   "What was the name of your first pet?",
@@ -14,6 +15,7 @@ const SECURITY_QUESTIONS = [
 ];
 
 export const LoginPage = () => {
+  usePageTitle('Log In');
   const { login } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({ email: '', password: '' });
@@ -28,6 +30,7 @@ export const LoginPage = () => {
   if (!form.password.trim()) { setError('Please enter your password.'); return; }
   setError(''); setLoading(true);
 };
+
   return (
     <div className="auth-page">
       {showForgot ? (
@@ -165,6 +168,7 @@ const ForgotPasswordForm = ({ onBack }) => {
 };
 
 export const RegisterPage = () => {
+  usePageTitle('Create Account');
   const { register } = useAuth();
   const navigate = useNavigate();
   const [form, setForm] = useState({
@@ -182,7 +186,7 @@ export const RegisterPage = () => {
   if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
   if (!form.securityAnswer.trim()) { setError('Please provide a security answer.'); return; }
 };
-
+  
   return (
     <div className="auth-page">
       <div className="auth-card card">

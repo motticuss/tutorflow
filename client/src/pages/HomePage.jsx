@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './HomePage.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 const SUBJECTS = [
   { icon: '∑', name: 'Mathematics' },
@@ -16,8 +17,11 @@ const FEATURES = [
   {  title: 'AI Session Summaries', desc: 'After each session, get an AI-generated summary with key takeaways and what to study next.' },
 ];
 
-const HomePage = () => (
-  <div className="home-page">
+const HomePage = () => {
+  usePageTitle('Find Your Perfect Tutor');
+  
+  return (
+    <div className="home-page">
     {/* Hero */}
     <section className="hero">
       <div className="container hero-inner">
@@ -97,5 +101,6 @@ const HomePage = () => (
 </section>
   </div>
 );
+}
 
 export default HomePage;

@@ -5,8 +5,10 @@ import BookingCard from '../components/BookingCard';
 import AISummaryModal from '../components/AISummaryModal';
 import './DashboardPage.css';
 import { Link } from 'react-router-dom';
+import usePageTitle from '../hooks/usePageTitle';
 
 const DashboardPage = () => {
+  usePageTitle('My Dashboard');
   const { user } = useAuth();
   const [bookings, setBookings] = useState([]);
   const [loading, setLoading] = useState(true);

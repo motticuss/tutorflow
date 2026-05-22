@@ -3,10 +3,12 @@ import { useSearchParams } from 'react-router-dom';
 import api from '../services/api';
 import ServiceCard from '../components/ServiceCard';
 import './ServicesPage.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 const LEVELS = ['', 'Elementary', 'Middle School', 'High School', 'College', 'Adult / Professional'];
 
 const ServicesPage = () => {
+  usePageTitle('Browse Services');
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();

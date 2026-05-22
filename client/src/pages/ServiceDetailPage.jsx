@@ -3,10 +3,12 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import api from '../services/api';
 import { useAuth } from '../context/AuthContext';
 import './ServiceDetailPage.css';
+import usePageTitle from '../hooks/usePageTitle';
 
 const TIME_SLOTS = ['9:00 AM','10:00 AM','11:00 AM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM'];
 
 const ServiceDetailPage = () => {
+ usePageTitle(service ? service.title : 'Service Details');
   const { id } = useParams();
   const { user } = useAuth();
   const navigate = useNavigate();

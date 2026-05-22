@@ -110,8 +110,9 @@ VITE_API_URL=http://localhost:5000
 | Backend   | Render         | Web service, set all env vars in dashboard  |
 | Database  | MongoDB Atlas  | Free tier cluster, whitelist `0.0.0.0/0`   |
 
-**Live App:** _[Add your deployment URL here]_
+**Live App:** https://tutorflow-one.vercel.app
 
+**Backend API:** https://tutorflow-server-me20.onrender.com
 ---
 
 ## How AI Was Used During Development
