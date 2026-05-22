@@ -6,7 +6,6 @@ import usePageTitle from '../hooks/usePageTitle';
 const EMPTY_SERVICE = { title:'', subject:'', level:'High School', description:'', duration:60, price:50, tutorName:'', available:true };
 
 const AdminPage = () => {
-  usePageTitle('Admin Panel');
   const [services, setServices] = useState([]);
   const [bookings, setBookings] = useState([]);
   const [tab, setTab] = useState('services');
@@ -14,6 +13,7 @@ const AdminPage = () => {
   const [editing, setEditing] = useState(null);
   const [showForm, setShowForm] = useState(false);
   const [msg, setMsg] = useState('');
+usePageTitle('Admin Panel');
 
   useEffect(() => {
     api.get('/services').then(r => setServices(r.data));

@@ -8,15 +8,15 @@ import usePageTitle from '../hooks/usePageTitle';
 const LEVELS = ['', 'Elementary', 'Middle School', 'High School', 'College', 'Adult / Professional'];
 
 const ServicesPage = () => {
-  usePageTitle('Browse Services');
+  
   const [services, setServices] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchParams, setSearchParams] = useSearchParams();
-
   const subject = searchParams.get('subject') || '';
   const level = searchParams.get('level') || '';
   const search = searchParams.get('search') || '';
-
+  usePageTitle('Browse Services');
+  
   useEffect(() => {
     setLoading(true);
     const params = {};
