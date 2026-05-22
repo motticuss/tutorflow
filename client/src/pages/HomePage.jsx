@@ -81,12 +81,17 @@ const HomePage = () => (
     </section>
 
     {/* CTA Banner */}
-    <section className="cta-banner">
-      <div className="container cta-inner">
-        <h2 className="cta-title">Ready to level up your learning?</h2>
-        <Link to="/register" className="btn btn-primary btn-lg">Create Free Account</Link>
-      </div>
-    </section>
+<section className="cta-banner">
+  <div className="container cta-inner">
+    <h2 className="cta-title">Ready to level up your learning?</h2>
+
+    {!localStorage.getItem('token') && (
+      <Link to="/register" className="btn btn-primary btn-lg">
+        Create Free Account
+      </Link>
+    )}
+  </div>
+</section>
   </div>
 );
 
