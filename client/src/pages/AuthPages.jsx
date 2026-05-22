@@ -24,17 +24,10 @@ export const LoginPage = () => {
   const handle = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
   const submit = async () => {
-    setError(''); setLoading(true);
-    try {
-      await login(form.email, form.password);
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Login failed. Check your credentials.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
+  if (!form.email.trim()) { setError('Please enter your email.'); return; }
+  if (!form.password.trim()) { setError('Please enter your password.'); return; }
+  setError(''); setLoading(true);
+};
   return (
     <div className="auth-page">
       {showForgot ? (
@@ -184,17 +177,11 @@ export const RegisterPage = () => {
   const handle = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }));
 
   const submit = async () => {
-    if (!form.securityAnswer.trim()) { setError('Please provide a security answer.'); return; }
-    setError(''); setLoading(true);
-    try {
-      await register(form.name, form.email, form.password, form.securityQuestion, form.securityAnswer);
-      navigate('/dashboard');
-    } catch (err) {
-      setError(err.response?.data?.message || 'Registration failed. Please try again.');
-    } finally {
-      setLoading(false);
-    }
-  };
+  if (!form.name.trim()) { setError('Please enter your name.'); return; }
+  if (!form.email.trim()) { setError('Please enter your email.'); return; }
+  if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
+  if (!form.securityAnswer.trim()) { setError('Please provide a security answer.'); return; }
+};
 
   return (
     <div className="auth-page">
