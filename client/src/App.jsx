@@ -9,6 +9,7 @@ import ServiceDetailPage from './pages/ServiceDetailPage';
 import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
 import { LoginPage, RegisterPage } from './pages/AuthPages';
+import NotFoundPage from './pages/NotFoundPage';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/admin" element={
             <ProtectedRoute adminOnly><AdminPage /></ProtectedRoute>
           } />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </BrowserRouter>
     </AuthProvider>
