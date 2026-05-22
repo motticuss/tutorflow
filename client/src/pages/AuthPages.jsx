@@ -29,6 +29,14 @@ export const LoginPage = () => {
   if (!form.email.trim()) { setError('Please enter your email.'); return; }
   if (!form.password.trim()) { setError('Please enter your password.'); return; }
   setError(''); setLoading(true);
+  try {
+    await login(form.email, form.password);
+    navigate('/dashboard');
+  } catch (err) {
+    setError(err.response?.data?.message || 'Login failed. Check your credentials.');
+  } finally {
+    setLoading(false);
+  }
 };
 
   return (
@@ -185,6 +193,15 @@ export const RegisterPage = () => {
   if (!form.email.trim()) { setError('Please enter your email.'); return; }
   if (form.password.length < 6) { setError('Password must be at least 6 characters.'); return; }
   if (!form.securityAnswer.trim()) { setError('Please provide a security answer.'); return; }
+  setError(''); setLoading(true);
+  try {
+    await register(form.name, form.email, form.password, form.securityQuestion, form.securityAnswer);
+    navigate('/dashboard');
+  } catch (err) {
+    setError(err.response?.data?.message || 'Registration failed. Please try again.');
+  } finally {
+    setLoading(false);
+  }
 };
   
   return (
