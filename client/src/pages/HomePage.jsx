@@ -32,9 +32,12 @@ const HomePage = () => (
             of every lesson — so you always know exactly what to study next.
           </p>
           <div className="hero-cta">
-            <Link to="/services" className="btn btn-primary btn-lg">Browse Tutors</Link>
-            <Link to="/register" className="btn btn-outline btn-lg">Get Started Free</Link>
-          </div>
+  <Link to="/services" className="btn btn-primary btn-lg"> Browse Tutors</Link>
+
+  {!localStorage.getItem('tutorflow_token') && (
+    <Link to="/register" className="btn btn-outline btn-lg">Get Started Free</Link>
+  )}
+</div>
         </div>
         <div className="hero-visual">
           <div className="hero-card card">
